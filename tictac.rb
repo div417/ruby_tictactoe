@@ -168,6 +168,7 @@ end
 cont=true;
 i=0
 while cont==true do
+    flagme=0
 	if i%2==0
           puts " O turn : Enter the position to fill"
           x=gets
@@ -186,6 +187,7 @@ while cont==true do
     	createboard n,arr
     else
     	puts "Position already fill try another position"
+        flagme=1;
     end
     numer=checkresult arr,n
     if numer==1
@@ -198,6 +200,8 @@ while cont==true do
     	puts "Game Draw"
     	cont=false
     end
+    if  flagme !=1
     i=i+1
+    end
 end
 
