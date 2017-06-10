@@ -43,140 +43,168 @@ end
 def fill x,y,i,arr
 	if i%2==0
 		arr[x][y]=1
-	else
+	elsif i%2==1
+        
 		arr[x][y]=-1
 	end
 end
 def checkresult arr,n
-    x=0;
-    y=0;
+    x=0
     flag=true
     while x<n do
-    	while y<n do
-    		if arr[x][y]==1
-    		
-    		else 
-    			flag=false
-    		    break
+        y=0
+        while y<n do
+            if arr[x][y]!=1
+                flag=false
+                break
             end
             y=y+1
         end
         if flag==true
-        	return 1
-        else
-            flag=true
-        end
-        x=x+1
-    end
-    x=0;
-    y=0;
-    flag=true
-    while x<n do
-    	while y<n do
-    		if arr[x][y]==-1
-    		else 
-    			flag=false
-    		    break
-            end
-            y=y+1
-        end
-        if flag==true
-        	return -1
-        else
-            flag=true
-        end
-        x=x+1
-    end
-    x=0;
-    y=0;
-    flag=true
-    while x<n do
-    	while y<n do
-    		if arr[y][x]==1
-    		else 
-    			flag=false
-    		    break
-            end
-            y=y+1
-        end
-        if flag==true
-        	return 1
-        else
-            flag=true
-        end
-        x=x+1
-    end
-    x=0;
-    y=0;
-    flag=true
-    while x<n do
-    	while y<n do
-    		if arr[y][x]==-1
-    		else 
-    			flag=false
-    		    break
-            end
-            y=y+1
-        end
-        if flag==true
-        	return -1
+            return 1
         else
             flag=true
         end
         x=x+1
     end
     x=0
-    y=0
     flag=true
     while x<n do
-    	while y<n do
-    		if x+y==n-1
-    			if arr[x][y]==1
-
-    			else
-    				flag=false
-    			end
-    		end
-    		y=y+1
-    	end
-    	x=x+1
-    end
-    if flag==true
-    	return 1
+        y=0
+        while y<n do
+            if arr[x][y]!=-1
+                flag=false
+                break
+            end
+            y=y+1
+        end
+        if flag==true
+            return -1
+        else
+            flag=true
+        end
+        x=x+1
     end
     x=0
-    y=0
     flag=true
     while x<n do
-    	while y<n do
-    		if x==y
-    			if arr[x][y]==-1
-
-    			else
-    				flag=false
-    			end
-    		end
-    		y=y+1
-    	end
-    	x=x+1
+        y=0
+        while y<n do
+            if arr[y][x]!=1
+                flag=false
+                break
+            end
+            y=y+1
+        end
+        if flag==true
+            return 1
+        else
+            flag=true
+        end
+        x=x+1
+    end
+    x=0
+    flag=true
+    while x<n do
+        y=0
+        while y<n do
+            if arr[y][x]!=-1
+                flag=false
+                break
+            end
+            y=y+1
+        end
+        if flag==true
+            return -1
+        else
+            flag=true
+        end
+        x=x+1
+    end
+    x=0
+    flag=true
+    while x<n do
+        y=0
+        while y<n do
+            if x+y==n-1
+                if arr[x][y]!=1
+                    flag=false
+                    break
+                end
+            end
+            y=y+1
+        end
+        x=x+1
     end
     if flag==true
-    	return -1
+        return 1
     end
-    return 0;
+    x=0
+    flag=true
+    while x<n do
+        y=0
+        while y<n do
+            if x+y==n-1
+                if arr[x][y]!=-1
+                    flag=false
+                end
+            end
+            y=y+1
+        end
+        x=x+1
+    end
+    if flag==true
+        return -1
+    end
+    x=0
+    flag=true
+    while x<n do
+        y=0
+        while y<n do
+            if x==y
+                if arr[x][y]!=1
+                    flag=false
+                end
+            end
+            y=y+1
+        end
+        x=x+1
+    end
+    if flag==true
+        return 1
+    end
+    x=0
+    flag=true
+    while x<n do
+        y=0
+        while y<n do
+            if x==y
+                if arr[x][y]!=-1
+                    flag=false
+                end
+            end
+            y=y+1
+        end
+        x=x+1
+    end
+    if flag==true
+        return -1
+    end
+    return 0
 end
-cont=true;
+
+cont=true
 i=0
 while cont==true do
     flagme=0
 	if i%2==0
-          puts " O turn : Enter the position to fill"
+          puts "O turn : Enter the position to fill"
           x=gets
           y=gets
           x=x.to_i;
           y=y.to_i;
     else
-    	 puts " X turn : Enter the position to fill"
+    	 puts "X turn : Enter the position to fill"
           x=gets
           y=gets
           x=x.to_i;
@@ -201,7 +229,7 @@ while cont==true do
     	cont=false
     end
     if  flagme !=1
-    i=i+1
+        i=i+1
     end
 end
 
